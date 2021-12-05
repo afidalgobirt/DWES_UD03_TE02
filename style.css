@@ -1,0 +1,53 @@
+.header {
+    text-align: center;
+    border: 5px solid black;
+}
+
+.content, .nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border: 5px solid black;
+    margin-top: 20px;
+}
+
+.botonNav {
+    display: block;
+    background-color: aqua;
+    padding: 5px 5% 5px 5%;
+    margin: 2% 5% 2% 5%;
+}
+
+.itemTipoProducto {
+    display: block;
+    background-color: aqua;
+    padding: 5%;
+    margin: 5%;
+}
+
+table {
+    border: 2px solid black;
+    border-collapse: collapse;
+    margin: 50px;
+}
+
+tr {
+    border-bottom: 2px solid black;;
+}
+
+th {
+    background-color: aqua;
+}
+
+th, td {
+    padding: 15px 15px;
+}
+
+form {
+    margin: 2%;
+}
+
+input {
+    margin: 5px;
+}
+
