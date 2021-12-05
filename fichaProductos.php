@@ -24,9 +24,7 @@
     }
 
     if (isset($_POST['eliminar'])) {
-        // Usar subStr para quitar la barra que aparece
-        // al final de la id del producto.
-        eliminarProducto(subStr($_POST['eliminar'], 0, -1));
+        eliminarProducto($_POST['eliminar']);
     } else if (isset($_POST['nombreNuevo'])) {
         crearProducto(
             $_POST['nombreNuevo'],
@@ -40,7 +38,7 @@
 
 <html>
     <head>
-        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="style.css"/>
     </head>
 
     <body>
@@ -56,7 +54,7 @@
         </div>
 
         <div class="content">
-            <table>
+            <table class="tablaProductos">
                 <tr>
                     <th>Nombre</th>
                     <th>Tipo</th>
@@ -78,8 +76,8 @@
                             <td><?php echo $prod['Descripcion'];?></td>
                             <td><?php echo $prod['pvpUnidad'];?></td>
                             <td><?php echo $prod['Descuento'];?></td>
-                            <td><input type="submit"/></td>
-                            <input type="hidden" name="eliminar" value=<?php echo $prod['idProducto']?>/>
+                            <td><input type="submit" value="Eliminar"></td>
+                            <input type="hidden" name="eliminar" value=<?php echo $prod['idProducto']?>>
                         </tr>
                     </form>
                 <?php }?>
@@ -89,7 +87,7 @@
         <div class="content">
             <form method="POST" action=<?php echo $_SERVER['PHP_SELF'];?>>
                 <label for="nombreNuevo">Nombre:</label>
-                <input type="text" id="nombreNuevo" name="nombreNuevo"/><br>
+                <input type="text" id="nombreNuevo" name="nombreNuevo"><br>
                 
                 <label for="tipoNuevo">Tipo:</label>
                 <select id="tipoNuevo" name="tipoNuevo">
@@ -102,18 +100,18 @@
                 </select><br>
 
                 <label for="unidadNuevo">Unidad:</label>
-                <input type="text" id="unidadNuevo" name="unidadNuevo"/><br>
+                <input type="text" id="unidadNuevo" name="unidadNuevo"><br>
 
                 <label for="descripcionNuevo">Descripci&oacute;n:</label>
-                <input type="text" id="descripcionNuevo" name="descripcionNuevo"/><br>
+                <input type="text" id="descripcionNuevo" name="descripcionNuevo"><br>
 
                 <label for="pvpNuevo">PVP:</label>
-                <input type="text" id="pvpNuevo" name="pvpNuevo"/><br>
+                <input type="text" id="pvpNuevo" name="pvpNuevo"><br>
 
                 <label for="descuentoNuevo">Descuento:</label>
-                <input type="text" id="descuentoNuevo" name="descuentoNuevo"/><br>
+                <input type="text" id="descuentoNuevo" name="descuentoNuevo"><br>
 
-                <input type="submit"/>
+                <input type="submit">
             </form>
         </div>
     </body>

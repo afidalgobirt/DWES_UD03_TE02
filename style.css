@@ -1,3 +1,13 @@
+body {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+h1 {
+    width: 100%;
+    text-align: center;
+}
+
 .header {
     text-align: center;
     border: 5px solid black;
@@ -6,9 +16,14 @@
 .content, .nav {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     border: 5px solid black;
     margin-top: 20px;
+}
+
+.content, .nav, .header {
+    width: 100%;
 }
 
 .botonNav {
@@ -19,35 +34,36 @@
 }
 
 .itemTipoProducto {
+    height: min-content;
     display: block;
     background-color: aqua;
     padding: 5%;
-    margin: 5%;
-}
-
-table {
-    border: 2px solid black;
-    border-collapse: collapse;
-    margin: 50px;
-}
-
-tr {
-    border-bottom: 2px solid black;;
-}
-
-th {
-    background-color: aqua;
-}
-
-th, td {
-    padding: 15px 15px;
-}
-
-form {
     margin: 2%;
 }
 
-input {
+.tablaProductos {
+    border: 2px solid black;
+    border-collapse: collapse;
+    margin: 2%;
+}
+
+.tablaProductos tr {
+    border-bottom: 2px solid black;;
+}
+
+.tablaProductos th {
+    background-color: aqua;
+}
+
+.tablaProductos th, td {
+    padding: 15px 15px;
+}
+
+.tablaProductos form {
+    margin: 2%;
+}
+
+.tablaProductos input {
     margin: 5px;
 }
 

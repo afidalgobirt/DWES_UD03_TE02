@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-11-2021 a las 18:26:49
+-- Tiempo de generación: 05-12-2021 a las 19:10:07
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 8.0.10
 
@@ -29,10 +29,18 @@ USE `ud03`;
 -- Estructura de tabla para la tabla `cesta`
 --
 
+DROP TABLE IF EXISTS `cesta`;
 CREATE TABLE `cesta` (
   `idcesta` int(11) UNSIGNED NOT NULL,
   `idusuario` int(11) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `cesta`
+--
+
+INSERT INTO `cesta` (`idcesta`, `idusuario`) VALUES
+(1, 1);
 
 -- --------------------------------------------------------
 
@@ -40,6 +48,7 @@ CREATE TABLE `cesta` (
 -- Estructura de tabla para la tabla `cesta_lineas`
 --
 
+DROP TABLE IF EXISTS `cesta_lineas`;
 CREATE TABLE `cesta_lineas` (
   `idcesta_lineas` int(11) UNSIGNED NOT NULL,
   `idcesta` int(11) UNSIGNED NOT NULL,
@@ -53,6 +62,7 @@ CREATE TABLE `cesta_lineas` (
 -- Estructura de tabla para la tabla `familia`
 --
 
+DROP TABLE IF EXISTS `familia`;
 CREATE TABLE `familia` (
   `idFamilia` int(11) UNSIGNED NOT NULL,
   `Familia` varchar(45) NOT NULL
@@ -63,7 +73,7 @@ CREATE TABLE `familia` (
 --
 
 INSERT INTO `familia` (`idFamilia`, `Familia`) VALUES
-(1, 'Digital');
+(1, 'Informatica');
 
 -- --------------------------------------------------------
 
@@ -71,6 +81,7 @@ INSERT INTO `familia` (`idFamilia`, `Familia`) VALUES
 -- Estructura de tabla para la tabla `producto`
 --
 
+DROP TABLE IF EXISTS `producto`;
 CREATE TABLE `producto` (
   `idProducto` int(11) UNSIGNED NOT NULL,
   `ProductoNombre` varchar(45) NOT NULL,
@@ -87,7 +98,7 @@ CREATE TABLE `producto` (
 
 INSERT INTO `producto` (`idProducto`, `ProductoNombre`, `idTipoProducto`, `Unidad`, `Descripcion`, `pvpUnidad`, `Descuento`) VALUES
 (1, 'HP 13 Envy', 1, 'ud', 'Ordenador HP', 1230, 20),
-(2, 'Macbook 13', 2, 'ud', 'Ordenador 13 pulgadas', 1350, 10),
+(2, 'Macbook 13', 1, 'ud', 'Ordenador 13 pulgadas', 1350, 10),
 (3, 'Visual Studio', 2, 'ud', 'Visual Studio', 56, 1),
 (4, 'Nikon D3500', 3, 'ud', 'Camara de fotos', 399, 0),
 (5, 'Sony FDR', 4, 'ud', 'Camara de video', 700, 10);
@@ -98,6 +109,7 @@ INSERT INTO `producto` (`idProducto`, `ProductoNombre`, `idTipoProducto`, `Unida
 -- Estructura de tabla para la tabla `tipo_producto`
 --
 
+DROP TABLE IF EXISTS `tipo_producto`;
 CREATE TABLE `tipo_producto` (
   `idTipo_producto` int(11) UNSIGNED NOT NULL,
   `DescTipoProd` varchar(45) NOT NULL,
@@ -120,11 +132,19 @@ INSERT INTO `tipo_producto` (`idTipo_producto`, `DescTipoProd`, `idFamilia`) VAL
 -- Estructura de tabla para la tabla `usuario`
 --
 
+DROP TABLE IF EXISTS `usuario`;
 CREATE TABLE `usuario` (
   `idusuario` int(11) UNSIGNED NOT NULL,
   `Nombre` varchar(45) NOT NULL,
   `Apellidos` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `usuario`
+--
+
+INSERT INTO `usuario` (`idusuario`, `Nombre`, `Apellidos`) VALUES
+(1, 'Aitor', 'Fidalgo');
 
 --
 -- Índices para tablas volcadas
